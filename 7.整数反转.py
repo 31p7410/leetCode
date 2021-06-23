@@ -58,7 +58,7 @@ def reverse(x: int) -> int:
         digit = x % 10
 
         # python 中 如果对负数取模, 如 -7%10 = 3, 我们想要矫正为 -7, 因此再 -10, digit = 0就不需要再矫正了
-        if x < 0 and digit != 0:
+        if x < 0 and digit > 0: # 这里的 digit 不可能小于0, 因为除数是10,被除数小于0,digit只可能大于等于0
             digit -= 10
 
         # 注意使用地板除, 直接除会有余数
